@@ -1,0 +1,21 @@
+# ===== タイマー =====
+scoreboard players add @a login_timer 1
+
+# ===== リセット =====
+execute as @a[scores={login_timer=24000..}] run scoreboard players set @s login_check 0
+execute as @a[scores={login_timer=24000..}] run scoreboard players set @s login_timer 0
+
+# ===== 毎日ログボ =====
+execute as @a unless score @s login_check matches 1 run function login_bonus:reward
+
+# ===== 累計ログボ（7日ごと） =====
+execute as @a[scores={login_total=7..,login_reward_7=0}] run function login_bonus:reward_7
+# execute as @a[scores={login_total=14..,login_reward_14=0}] run function login_bonus:reward_14
+# execute as @a[scores={login_total=21..,login_reward_21=0}] run function login_bonus:reward_21
+# execute as @a[scores={login_total=28..,login_reward_28=0}] run function login_bonus:reward_28
+# execute as @a[scores={login_total=35..,login_reward_35=0}] run function login_bonus:reward_35
+# execute as @a[scores={login_total=42..,login_reward_42=0}] run function login_bonus:reward_42
+# execute as @a[scores={login_total=49..,login_reward_49=0}] run function login_bonus:reward_49
+
+# ===== 49日以降の繰り返しガチャ =====
+execute as @a[scores={login_total=49..,login_reward_49_repeat=0}] run function login_bonus:reward_49_repeat
