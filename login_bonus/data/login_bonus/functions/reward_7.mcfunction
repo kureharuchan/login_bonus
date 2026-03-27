@@ -7,9 +7,11 @@ scoreboard players operation @s random %= #hundred login_bonus
 
 # 超レア（5%）
 execute if score @s random matches 0..4 run give @s minecraft:netherite_ingot 1
+execute if score @s random matches 0..4 run playsound minecraft:entity.player.levelup master @s
 
 # レア（25%）
 execute if score @s random matches 5..29 run give @s minecraft:diamond 10
+execute if score @s random matches 5..29 run playsound minecraft:entity.experience_orb.pickup master @s
 
 # ノーマル（70%）
 execute if score @s random matches 30..99 run give @s minecraft:emerald 30
