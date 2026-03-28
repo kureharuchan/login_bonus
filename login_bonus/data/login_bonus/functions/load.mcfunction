@@ -1,11 +1,15 @@
 # ===== 基本 =====
-scoreboard objectives add login_check dummy
-scoreboard objectives add login_timer dummy
-scoreboard objectives add login_total dummy
+scoreboard objectives add login_time dummy
+scoreboard objectives add last_claim_time dummy
+scoreboard objectives add time_diff dummy
+
+# ===== 日付管理 =====
+scoreboard objectives add server_time dummy
+scoreboard objectives add server_day dummy
+scoreboard objectives add last_login_day dummy
 
 # ===== ランダム =====
 scoreboard objectives add random dummy
-scoreboard players set @a random 0
 
 # ===== 累計ログボ（7日ごと） =====
 scoreboard objectives add login_reward_7 dummy

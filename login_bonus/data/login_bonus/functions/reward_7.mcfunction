@@ -20,4 +20,4 @@ execute if score @s random matches 30..99 run give @s minecraft:emerald 30
 scoreboard players set @s login_reward_7 1
 
 # 演出
-title @s actionbar {"text":"累計7日ログインボーナス！","color":"gold"}
+title @a actionbar {"text":"累計7日ログインボーナス！","color":"gold"}
